@@ -4,14 +4,16 @@
     <v-main>
       <router-view/>
     </v-main>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Header from "./Header";
+import Footer from "./Footer";
 export default {
   name: 'Container',
-  components: {Header},
+  components: {Footer, Header},
 }
 </script>
 

@@ -4,13 +4,13 @@
       <div style="display: flex">
         <div style="display: flex"  class="px-2">
           <div class="mr-2" style="align-self: center">
-            <v-icon size="28">
+            <v-icon size="20">
               {{item.icon}}
             </v-icon>
           </div>
           <div style="text-align: left">
-            <h4>{{item.title}}</h4>
-            <div>
+            <h5>{{item.title}}</h5>
+            <div style="color: #b1a9a9; font-size: 14px">
               {{item.description}}
             </div>
           </div>

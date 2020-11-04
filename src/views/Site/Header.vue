@@ -1,32 +1,26 @@
 <template>
   <v-card>
-    <v-card style="width: 100%;background-color: lightgrey"
-            class="px-2">
-      <v-container>
+      <v-container class="pb-0">
         <div style="display: flex;justify-content: space-between">
-          <div>
-            {{broad_cast_title}}
+          <div style="align-self: center">
+            <img v-if="logo.image!=''" :src="require('../../assets/img/logo.png')"/>
           </div>
           <div>
-            <top-banner-links :link_list="top_banner_links"/>
+            <div style="display: flex;justify-content: space-between;">
+              <v-spacer></v-spacer>
+              <div>
+                <top-banner-links :link_list="top_banner_links"/>
+              </div>
+            </div>
+            <div style="display: flex;justify-content: space-between" class="pt-3">
+              <v-spacer></v-spacer>
+              <div>
+                <contact-list :link_list="contact_list"/>
+              </div>
+            </div>
           </div>
         </div>
       </v-container>
-    </v-card>
-    <v-card style="width: 100%;"
-            class="px-2">
-      <v-container>
-        <div style="display: flex;justify-content: space-between">
-          <div>
-            <img v-if="logo.image!=''" :src="logo.image"/>
-            <h1 v-else>{{logo.alt_text}}</h1>
-          </div>
-          <div>
-            <contact-list :link_list="contact_list"/>
-          </div>
-        </div>
-      </v-container>
-    </v-card>
     <v-card color="red" flat tile dark>
       <v-container class="py-0">
         <div style="display: flex">

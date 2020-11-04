@@ -43,8 +43,6 @@
         v-else
         tile
         dark
-        v-bind="attrs"
-        v-on="on"
         text
         large
       >
