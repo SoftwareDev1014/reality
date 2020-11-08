@@ -141,7 +141,7 @@
               </div>
             </div>
             <div style="width: 20%">
-              <div class="btnsearch" >
+              <div class="btnsearch">
                 <span style="line-height: 120px;color: #fcdbd8; font-size: larger;font-weight: bolder">Search</span>
               </div>
             </div>
@@ -235,6 +235,72 @@
                 </v-card>
               </v-col>
             </v-row>
+            <v-card class="rectradius1">
+              <div class="pa-4">
+                <h3>비지니스 추천매물</h3>
+              </div>
+              <div class="pa-4">
+                <v-tabs
+                  v-model="tab"
+                  background-color="black accent-4"
+                  centered
+                  grow
+                  dark
+                  icons-and-text
+                >
+                  <v-tab>
+                    식당/카페
+                    <v-icon>mdi-silverware-fork-knife</v-icon>
+                  </v-tab>
+
+                  <v-tab>
+                    리커/마켓
+                    <v-icon>mdi-cart-variant</v-icon>
+                  </v-tab>
+
+                  <v-tab>
+                    세탁소/코인런드리
+                    <v-icon>mdi-washing-machine</v-icon>
+                  </v-tab>
+                  <v-tab>
+                    미용/재료상
+                    <v-icon>mdi-hair-dryer</v-icon>
+                  </v-tab>
+                  <v-tab-item>
+                    <div style="display: flex;justify-content: space-between" class="pa-4">
+                      <div style="width: 100px">
+                        <v-img :src="require('../assets/img/e2_Restaurant.jpg')" style="width: 100px"/>
+                      </div>
+                      <div>Artesia,CA,월매상 : $30,000</div>
+                    </div>
+                  </v-tab-item>
+                  <v-tab-item>
+                    <div style="display: flex;justify-content: space-between" class="pa-4">
+                      <div style="width: 100px">
+                        <v-img :src="require('../assets/img/e2_market.jpg')" style="width: 100px"/>
+                      </div>
+                      <div>Palm Spring,CA,월매상 : $27,000</div>
+                    </div>
+                  </v-tab-item>
+                  <v-tab-item>
+                    <div style="display: flex;justify-content: space-between" class="pa-4">
+                      <div style="width: 100px">
+                        <v-img :src="require('../assets/img/e2_laundry.jpg')" style="width: 100px"/>
+                      </div>
+                      <div>Flxeeddsd,CA,월매상 : $3000</div>
+                    </div>
+                  </v-tab-item>
+                  <v-tab-item>
+                    <div style="display: flex;justify-content: space-between" class="pa-4">
+                      <div style="width: 100px">
+                        <v-img :src="require('../assets/img/e2_beauty.jpg')" style="width: 100px"/>
+                      </div>
+                      <div>Baesia,CA,월매상 : $12,000</div>
+                    </div>
+                  </v-tab-item>
+                </v-tabs>
+              </div>
+            </v-card>
           </v-container>
         </v-col>
         <v-col cols="3">
@@ -298,7 +364,7 @@
                     class="custom_input"
                   >
                     <template #append>
-                      <div  style="color: gray;font-size: 12px;font-weight: 100" class="pt-2 pr-2">
+                      <div style="color: gray;font-size: 12px;font-weight: 100" class="pt-2 pr-2">
                         year
                       </div>
                     </template>
@@ -355,12 +421,13 @@
                   </v-menu>
                 </div>
               </div>
-              <div class="pt-8" style="text-align: center;cursor: pointer; text-decoration: underline" @click="isExtraPayment=!isExtraPayment">
+              <div class="pt-8" style="text-align: center;cursor: pointer; text-decoration: underline"
+                   @click="isExtraPayment=!isExtraPayment">
                 <h5 v-show="!isExtraPayment">Add extra payments</h5>
                 <h5 v-show="isExtraPayment">Remove extra payments</h5>
               </div>
-              <transition  name="fade">
-                <div  v-if="isExtraPayment">
+              <transition name="fade">
+                <div v-if="isExtraPayment">
                   <div class="pt-8" style="display: flex">
                     <div style="width: 50%">
                       <h5>To monthly</h5>
@@ -375,7 +442,7 @@
                       ></v-text-field>
                     </div>
                   </div>
-                  <div class="pt-6"  style="display: flex">
+                  <div class="pt-6" style="display: flex">
                     <div style="width: 50%">
                       <h5>Extra yearly</h5>
                     </div>
@@ -418,12 +485,13 @@ import RadioList from "@/components/RadioList";
 import BusinessList from "@/components/BusinessList";
 import homeReference1 from "@/Models/HomeReference";
 import HomeReference from "@/components/HomeReference";
+
 export default {
   name: 'Home',
   components: {HomeReference, CommunityList, HouseList, RadioList, BusinessList},
-  data:()=>({
-    isExtraPayment:false,
-    homeRef:homeReference1
+  data: () => ({
+    isExtraPayment: false,
+    homeRef: homeReference1
   })
 }
 </script>
