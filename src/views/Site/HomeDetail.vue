@@ -2,7 +2,9 @@
   <div>
     <div class="thumb-example">
       <!-- swiper1 -->
-      <swiper class="swiper gallery-top" :options="swiperOptionTop" ref="swiperTop">
+      <swiper class="swiper gallery-top"
+              :initialSlide="5"
+              :options="swiperOptionTop" ref="swiperTop">
         <swiper-slide class="slide-1">1</swiper-slide>
         <swiper-slide class="slide-2">2</swiper-slide>
         <swiper-slide class="slide-3">3</swiper-slide>
@@ -31,7 +33,7 @@ export default {
   components: {
 
   },
-  data() {
+  data () {
     return {
       swiperOptionTop: {
         loop: true,
@@ -53,12 +55,14 @@ export default {
       }
     }
   },
-  mounted() {
+  mounted () {
     this.$nextTick(() => {
       const swiperTop = this.$refs.swiperTop.$swiper
       const swiperThumbs = this.$refs.swiperThumbs.$swiper
-      swiperTop.controller = swiperThumbs
-      swiperThumbs.controller = swiperTop
+      // console.log('swiperTop',swiperTop)
+      // console.log('swiperThumbs',swiperThumbs)
+      swiperTop.controller.control = swiperThumbs
+      swiperThumbs.controller.control = swiperTop
     })
   }
 }
