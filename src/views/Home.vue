@@ -491,7 +491,8 @@ export default {
   components: {HomeReference, CommunityList, HouseList, RadioList, BusinessList},
   data: () => ({
     isExtraPayment: false,
-    homeRef: homeReference1
+    homeRef: homeReference1,
+    tab: null
   })
 }
 </script>

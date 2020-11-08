@@ -140,8 +140,7 @@
               <v-tab-item>
                 <v-card flat style="border-left: solid lightgray 1px">
                   <v-card-text>
-                    <div id="map" style="width: 100%; height: 400px">
-                    </div>
+                    <MyMap/>
                   </v-card-text>
                 </v-card>
               </v-tab-item>
@@ -213,12 +212,14 @@
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import hostlist from '@/Models/hostlist'
+import MyMap from '../../components/MyMap'
 
 export default {
 
   name: 'homedetail',
   title: 'Thumbs gallery with Two-way control',
   components: {
+    MyMap,
     Swiper,
     SwiperSlide
     // eslint-disable-next-line vue/no-unused-components
@@ -255,16 +256,14 @@ export default {
       swiperTop.controller = swiperThumbs
       swiperThumbs.controller = swiperTop
     })
-    this.initMap()
+
     // this.setMarker(this.mapcenter, 'A')
   },
+  created () {
+
+  },
   methods: {
-    initMap () {
-      this.map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: -33.8688, lng: 151.2195 },
-        zoom: 13
-      })
-    },
+
     setMarker (Points, Label) {
       /* const markers = new google.maps.Marker({
         Position: Points,
