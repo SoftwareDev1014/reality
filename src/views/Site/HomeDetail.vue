@@ -93,7 +93,7 @@
         </div>
       </v-card>
     </v-container>
-    <v-container >
+    <v-container>
       <v-row>
         <v-col cols="5">
           <v-card class="pt-0" style="height: 100%">
@@ -114,7 +114,7 @@
           </v-card>
         </v-col>
         <v-col cols="7">
-          <v-card  style="height: 100%">
+          <v-card style="height: 100%">
             <v-toolbar
               flat
               color="purple"
@@ -197,7 +197,10 @@
               <div>{{ item.mls_code }}</div>
               <div style="display: flex;justify-content: space-between">
                 <i class="fa fa-bed">{{ item.room_num }} Bed</i>
+                <v-spacer/>
                 <i class="fas fa-bath">{{ item.bath_num }} Bath</i>
+                <v-spacer/>
+                <i class="fas fa-square">{{ item.sqft }}</i>
               </div>
             </v-col>
           </v-row>
@@ -209,7 +212,7 @@
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import hostlist from '@/Models/hostlist'
 import MyMap from '../../components/MyMap'
@@ -224,7 +227,7 @@ export default {
     SwiperSlide
     // eslint-disable-next-line vue/no-unused-components
   },
-  data () {
+  data() {
     return {
       swiperOptionTop: {
         loop: true,
@@ -245,11 +248,11 @@ export default {
         slideToClickedSlide: true
       },
       map: null,
-      mapcenter: { lat: 37.773972, lng: -122.431297 },
+      mapcenter: {lat: 37.773972, lng: -122.431297},
       hostlist: hostlist
     }
   },
-  mounted () {
+  mounted() {
     this.$nextTick(() => {
       const swiperTop = this.$refs.swiperTop.$swiper
       const swiperThumbs = this.$refs.swiperThumbs.$swiper
@@ -259,12 +262,9 @@ export default {
 
     // this.setMarker(this.mapcenter, 'A')
   },
-  created () {
-
-  },
   methods: {
 
-    setMarker (Points, Label) {
+    setMarker(Points, Label) {
       /* const markers = new google.maps.Marker({
         Position: Points,
         map: this.map,
