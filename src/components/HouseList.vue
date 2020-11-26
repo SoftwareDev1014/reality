@@ -35,6 +35,7 @@
     </v-slide-group>
   </v-sheet>
 
+
   <!--  <v-container style="display: flex">-->
   <!--    <v-row>-->
   <!--      <v-col  cols="4" v-for="(item,index)  in hostList"  :key="index">-->
