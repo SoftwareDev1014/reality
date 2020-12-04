@@ -74,3 +74,9 @@
 .v-slide-group__next, .v-slide-group__prev{
   min-width: 0!important;
 }
+input:focus, select:focus{
+  outline: 0;
+}
+select.border,input.border{
+  border:solid lightgrey 2px;
+}

@@ -40,7 +40,7 @@ export default new Vuex.Store({
         }
       ],
       logo: {
-        image: '@/assets/img/logo.png',
+        image: '~@/assets/img/logo.png',
         alt_text: 'GIANT'
       },
       contact_list: [
@@ -73,70 +73,72 @@ export default new Vuex.Store({
         },
         {
           name: 'For Sale',
+          to: '/sale',
           isDrop: true,
           children: [
             {
               name: '신규 리스팅',
               isDrop: false,
-              to: '/home'
+              to: '/sale/property'
             },
             {
               name: '독점 리스팅',
               isDrop: false,
-              to: '/home'
+              to: '/sale/giantrealty'
             },
             {
               name: '워싱턴 DC 부동산 매매',
               isDrop: false,
-              to: '/home'
+              to: '/sale/washingtonDC'
             },
             {
               name: '오픈하우스',
               isDrop: false,
-              to: '/home'
+              to: '/sale/openhouse'
             },
             {
               name: '학군검색',
               isDrop: false,
-              to: '/home'
+              to: '/sale/school-search'
             }
           ]
         },
         {
           name: 'For Rent',
+          to: '/rent/property',
           isDrop: true,
           children: [
             {
               name: '신규 리스팅',
               isDrop: false,
-              to: '/home'
+              to: '/rent/property'
             },
             {
               name: '독점 리스팅',
               isDrop: false,
-              to: '/home'
+              to: '/rent/giantrealty'
             },
             {
               name: '워싱턴 DC 부동산 매매',
               isDrop: false,
-              to: '/home'
+              to: '/rent/washingtonDC'
             },
             {
               name: '학군검색',
               isDrop: false,
-              to: '/home'
+              to: '/rent/school-search'
             }
           ]
         },
         {
           name: '비지니스',
           isDrop: false,
-          to: '/home'
+          to: '/bossiness'
         },
         {
           name: '커머셜',
           isDrop: false,
-          to: '/home'
+          to: '/commercial'
         },
         {
           name: '커뮤니티',
@@ -145,35 +147,35 @@ export default new Vuex.Store({
             {
               name: '부동산 컬럼',
               isDrop: false,
-              to: '/home'
+              to: '/community/1'
             },
             {
               name: '부동산 경제뉴스',
               isDrop: false,
-              to: '/home'
+              to: '/community/2'
             },
             {
               name: '자이언트 부동산 소식',
               isDrop: false,
-              to: '/home'
+              to: '/community/3'
             },
             {
               name: '부동산 학교',
               isDrop: false,
-              to: '/home'
+              to: '/community/4'
             },
             {
               name: '부동산 매매 상담',
               isDrop: false,
-              to: '/home'
+              to: '/community/5'
             }
           ]
         },
         {
           name: '에이젼트',
           isDrop: false,
-          to: '/home'
-        },
+          to: '/agent'
+        }
       ],
       social_links: [
         {

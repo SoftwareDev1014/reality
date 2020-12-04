@@ -49,7 +49,7 @@
             <div style="display: flex;justify-content: space-between;">
               <div style="align-self: center">
                 <v-img class="v-avatar"
-                       :src="require('../../assets/pic/user1.jpg')"
+                       :src="require('../assets/pic/user1.jpg')"
                        width="150"></v-img>
               </div>
               <div class="pa-2">
@@ -215,7 +215,7 @@
 import {Swiper, SwiperSlide} from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import hostlist from '@/Models/hostlist'
-import MyMap from '../../components/MyMap'
+import MyMap from '../components/MyMap'
 
 export default {
 

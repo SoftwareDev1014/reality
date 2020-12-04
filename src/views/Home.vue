@@ -1,5 +1,5 @@
 <template>
-  <v-card style="width: 100%">
+  <div>
     <div class="propertysearch">
       <v-container>
         <div>
@@ -11,13 +11,15 @@
               <div style="flex: 1; padding: 0 10px 0 0">
                 <div><a style="font-size: 13px;color: white">Enter your search below</a></div>
                 <input placeholder="MLS #, City or Zip"
-                       style="background-color: white; width: 100%; height: 28px">
-                </input>
+                       class="px-2"
+                       style="background-color: white; width: 100%; height: 28px"/>
               </div>
               <div>
                 <div><a style="font-size: 13px;color: white">Min Price</a></div>
-                <select name="qminprice" style="color:#000; width:100px;height:28px;background-color: white">
+                <select name="qminprice" class="px-2" style="color:#000; width:100px;height:28px;background-color: white">
                   <option value="0">No Min</option>
+                  <!--<option v-for="item in [500,750,1000,1250,1500,2000,3000,5000,10000,50000,75000]" :key="item"
+                          :value="parseFloat(item)">$ {{item}}</option>-->
                   <option value="500">$ 500</option>
                   <option value="750">$ 750</option>
                   <option value="1000">$ 1,000</option>
@@ -52,7 +54,7 @@
               <div style="float:left; margin-left:10px;height:28px;">
                 <div><a style="font-size: 13px;color: white">Max Price</a></div>
 
-                <select name="qmaxprice" style="color:#000; width:100px;height:28px;background-color: white">
+                <select class="px-2" name="qmaxprice" style="color:#000; width:100px;height:28px;background-color: white">
                   <option value="0">No Max</option>
                   <option value="750">$ 750</option>
                   <option value="1000">$ 1,000</option>
@@ -87,6 +89,7 @@
               <div style="float:left; margin-left:10px;">
                 <div><a style="font-size: 13px;color: white">Beds</a></div>
                 <select name="qbeds"
+                        class="px-2"
                         style="color:#000; font-weight:normal; width:60px; height:28px;background-color: white">
                   <option value="0">any</option>
                   <option value="1">1+</option>
@@ -100,7 +103,7 @@
               </div>
               <div style="float:left; margin-left:10px;">
                 <div><a style="font-size: 13px;color: white">Baths</a></div>
-                <select name="qbaths"
+                <select class="px-2" name="qbaths"
                         style="color:#000;font-weight:normal; width:60px;height:28px;background-color: white">
                   <option value="0">any</option>
                   <option value="1">1+</option>
@@ -114,36 +117,36 @@
           <div style="display: flex" class="pa-3">
             <div style="width: 40%">
               <div style="display: flex" class="pa-3">
-                <input type="checkbox" id="test" style="align-self: center">
-                <label for="test" style="font-size: 13px;padding-top: -10px">일반주택 (Single-Family)</label>
+                <input type="checkbox" id="single_fam" style="align-self: center">
+                <label for="single_fam" style="font-size: 13px;padding-top: -10px">일반주택 (Single-Family)</label>
               </div>
               <div style="display: flex" class="pa-3">
-                <input type="checkbox" id="test" style="align-self: center">
-                <label for="test" style="font-size: 13px;padding-top: -10px">타운하우스 (Townhouse)</label>
+                <input type="checkbox" id="town_house" style="align-self: center">
+                <label for="town_house" style="font-size: 13px;padding-top: -10px">타운하우스 (Townhouse)</label>
               </div>
               <div style="display: flex" class="pa-3">
-                <input type="checkbox" id="test" style="align-self: center">
-                <label for="test" style="font-size: 13px;padding-top: -10px">콘도 (Condo)</label>
+                <input type="checkbox" id="condo" style="align-self: center">
+                <label for="condo" style="font-size: 13px;padding-top: -10px">콘도 (Condo)</label>
               </div>
             </div>
             <div style="width: 40%">
               <div style="display: flex" class="pa-3">
-                <input type="radio" id="test" style="align-self: center">
-                <label for="test" style="font-size: 13px;padding-top: -10px">매매 (Sale)</label>
+                <input type="radio" id="sale" style="align-self: center" name="sale_type">
+                <label for="sale" style="font-size: 13px;padding-top: -10px">매매 (Sale)</label>
               </div>
               <div style="display: flex" class="pa-3">
-                <input type="radio" id="test" style="align-self: center">
-                <label for="test" style="font-size: 13px;padding-top: -10px">렌트 (Rent)</label>
+                <input type="radio" id="rent" style="align-self: center" name="sale_type">
+                <label for="rent" style="font-size: 13px;padding-top: -10px">렌트 (Rent)</label>
               </div>
               <div style="display: flex" class="pa-3">
-                <input type="radio" id="test" style="align-self: center">
-                <label for="test" style="font-size: 13px;padding-top: -10px">오픈하우스 (Openhouse)</label>
+                <input type="radio" id="open_house" style="align-self: center" name="sale_type">
+                <label for="open_house" style="font-size: 13px;padding-top: -10px">오픈하우스 (Openhouse)</label>
               </div>
             </div>
-            <div style="width: 20%">
-              <div class="btnsearch">
-                <span style="line-height: 120px;color: #fcdbd8; font-size: larger;font-weight: bolder">Search</span>
-              </div>
+            <div style="width: 20%; align-self: center">
+              <v-btn x-large fab class="btnsearch" link :to="'/search'">
+
+              </v-btn>
             </div>
           </div>
         </div>
@@ -151,9 +154,8 @@
     </div>
     <v-container>
       <v-row>
-        <v-col cols="9">
-
-          <v-container>
+        <v-col cols="9" class="py-0">
+          <div>
             <v-card class="rectradius1">
               <div style="border-bottom: dashed grey 1px; text-align: center;padding: 5px">
                 <h4>Residential Exclusive Listings</h4>
@@ -301,10 +303,10 @@
                 </v-tabs>
               </div>
             </v-card>
-          </v-container>
+          </div>
         </v-col>
-        <v-col cols="3">
-          <div class="pt-4">
+        <v-col cols="3" class="py-0">
+          <div class="">
             <v-card class="rectradius1 pt-4">
               <div style="text-align: center">
                 <h4>Mortgage Calculator</h4>
@@ -473,26 +475,25 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-card>
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
-import HouseList from "@/components/HouseList";
-import CommunityList from "@/components/CommunityList";
-import RadioList from "@/components/RadioList";
-import BusinessList from "@/components/BusinessList";
-import homeReference1 from "@/Models/HomeReference";
-import HomeReference from "@/components/HomeReference";
+import HouseList from '@/components/HouseList'
+
+import homeReference1 from '@/Models/HomeReference'
+import HomeReference from '@/components/HomeReference'
 
 export default {
   name: 'Home',
-  components: {HomeReference, CommunityList, HouseList, RadioList, BusinessList},
+  components: { HomeReference,  HouseList},
   data: () => ({
     isExtraPayment: false,
     homeRef: homeReference1,
-    tab: null
+    tab: null,
+    date: ''
   })
 }
 </script>

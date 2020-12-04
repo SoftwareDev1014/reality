@@ -10,6 +10,7 @@
       <v-menu
         offset-y
         v-if="item_data.isDrop"
+        open-on-hover
         tile
       >
         <template v-slot:activator="{ on, attrs }">
@@ -18,9 +19,11 @@
             dark
             v-bind="attrs"
             v-on="on"
+            link
+            :to="item_data.to"
             large
             text
-            class="px-1"
+            class="px-1 font-weight-light"
           >
             {{item_data.name}}
             <v-icon>
@@ -33,7 +36,7 @@
             v-for="(item, index) in item_data.children"
             :key="index"
             link
-            :to="item.link"
+            :to="item.to"
           >
             <v-list-item-title>{{ item.name }}</v-list-item-title>
           </v-list-item>
@@ -45,6 +48,9 @@
         dark
         text
         large
+        link
+        class="font-weight-light"
+        :to="item_data.to"
       >
         {{item_data.name}}
       </v-btn>

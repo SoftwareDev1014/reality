@@ -4,7 +4,9 @@
     <v-main>
       <router-view/>
     </v-main>
-    <Footer/>
+    <v-footer app absolute style="width: 100%;background-color: lightgrey">
+      <Footer/>
+    </v-footer>
   </div>
 </template>
 
